@@ -3,6 +3,7 @@ body {
   font-family: "Oswald", sans-serif;
   font-weight: 400;
   letter-spacing: 0.02em;
+  color: white;
 }
 header,
 footer {
@@ -10,6 +11,7 @@ footer {
   align-items: center;
   height: 80px;
   background-color: lightgray;
+  background: #f30342;
 }
 header {
   justify-content: flex-end;
@@ -32,13 +34,16 @@ nav a {
 nav a::after {
   content: "";
   display: block;
-  background: black;
+  background: white;
   height: 2px;
   width: 0;
   transition: width 0.3s;
 }
 nav a:hover::after {
   width: 100%;
+}
+section {
+  background: url("./assets/background.png") center / cover no-repeat;
 }
 .album {
   display: grid;
