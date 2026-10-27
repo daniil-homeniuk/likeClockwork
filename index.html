@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>...Like Clockwork</title>
+  </head>
+
+  <style>
+    body {
+      margin: 0;
+    }
+    header,
+    footer {
+      display: flex;
+      align-items: center;
+      height: 80px;
+      background-color: lightgray;
+    }
+    header {
+      justify-content: flex-end;
+    }
+    nav {
+      margin: 0 4rem;
+    }
+    nav ul {
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    nav a {
+      color: inherit;
+      text-decoration: none;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .album {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+    }
+    .album-cover {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .track-list {
+      padding: 0;
+      list-style: none;
+    }
+    .track-list li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid lightgray;
+    }
+    .play-button {
+      display: grid;
+      width: 2rem;
+      height: 2rem;
+      place-items: center;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      cursor: pointer;
+    }
+    .play-button:hover {
+      opacity: 0.65;
+    }
+    .play-button svg {
+      display: block;
+    }
+    #soundcloud-player {
+      width: 100%;
+      height: 166px;
+      border: 0;
+    }
+    @media (max-width: 600px) {
+      .album {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <body>
+    <main>
+      <header>
+        <nav>
+          <ul>
+            <li><a href="#evenements">Événements</a></li>
+            <li><a href="#merch">Merch</a></li>
+            <li><a href="#biographie">Biographie</a></li>
+            <li><a href="#discographie">Discographie</a></li>
+          </ul>
+        </nav>
+      </header>
+      <section class="album">
+        <div>
+          <img
+            class="album-cover"
+            src="./assets/poster.jpg"
+            alt="Pochette temporaire de l’album"
+          />
+          <p>
+            *…Like Clockwork* est un album de Queens of the Stone Age sorti en
+            2013. Il mélange rock alternatif, stoner rock et atmosphères
+            sombres. L’album aborde des thèmes comme la solitude, le doute et
+            les difficultés personnelles, avec un son à la fois puissant et
+            mélancolique.
+          </p>
+        </div>
+        <div>
+          <h1>...Like Clockwork</h1>
+          <p>3 juin 2013</p>
+          <h2>Queens of the Stone Age</h2>
+          <ul class="track-list">
+            <li>
+              <span>01. Keep Your Eyes Peeled</span>
+              <button
+                class="play-button"
+                type="button"
+                data-track-index="0"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  viewBox="0 0 16 16"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M10.804 8 5 4.633v6.734zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696z"
+                  />
+                </svg>
+              </button>
+            </li>
+            <li>
+              <span>02. I Sat by the Ocean</span>
+              <button
+                class="play-button"
+                type="button"
+                data-track-index="1"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  viewBox="0 0 16 16"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M10.804 8 5 4.633v6.734zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696z"
+                  />
+                </svg>
+              </button>
+            </li>
+            <li>
+              <span>03. The Vampyre of Time and Memory</span>
+              <button
+                class="play-button"
+                type="button"
+                data-track-index="2"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  viewBox="0 0 16 16"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M10.804 8 5 4.633v6.734zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696z"
+                  />
+                </svg>
+              </button>
+            </li>
+            <li>
+              <span>04. If I Had a Tail</span>
+              <button
+                class="play-button"
+                type="button"
+                data-track-index="3"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  viewBox="0 0 16 16"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M10.804 8 5 4.633v6.734zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696z"
+                  />
+                </svg>
+              </button>
+            </li>
+            <li>
+              <span>05. My God Is the Sun</span>
+              <button
+                class="play-button"
+                type="button"
+                data-track-index="4"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  viewBox="0 0 16 16"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M10.804 8 5 4.633v6.734zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696z"
+                  />
+                </svg>
+              </button>
+            </li>
+            <li>
+              <span>06. Kalopsia</span>
+              <button
+                class="play-button"
+                type="button"
+                data-track-index="5"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  viewBox="0 0 16 16"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M10.804 8 5 4.633v6.734zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696z"
+                  />
+                </svg>
+              </button>
+            </li>
+            <li>
+              <span>07. Fairweather Friends</span>
+              <button
+                class="play-button"
+                type="button"
+                data-track-index="6"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  viewBox="0 0 16 16"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M10.804 8 5 4.633v6.734zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696z"
+                  />
+                </svg>
+              </button>
+            </li>
+            <li>
+              <span>08. Smooth Sailing</span>
+              <button
+                class="play-button"
+                type="button"
+                data-track-index="7"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  viewBox="0 0 16 16"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M10.804 8 5 4.633v6.734zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696z"
+                  />
+                </svg>
+              </button>
+            </li>
+            <li>
+              <span>09. I Appear Missing</span>
+              <button
+                class="play-button"
+                type="button"
+                data-track-index="8"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  viewBox="0 0 16 16"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M10.804 8 5 4.633v6.734zm.792-.696a.802.8 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696z"
+                  />
+                </svg>
+              </button>
+            </li>
+            <li>
+              <span>10. ...Like Clockwork</span>
+              <button
+                class="play-button"
+                type="button"
+                data-track-index="9"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  viewBox="0 0 16 16"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M10.804 8 5 4.633v6.734zm.792-.696a.802.8 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696z"
+                  />
+                </svg>
+              </button>
+            </li>
+          </ul>
+          <iframe
+            id="soundcloud-player"
+            title="Lecteur SoundCloud"
+            hidden
+            allow="autoplay"
+          ></iframe>
+        </div>
+      </section>
+      <footer>
+        <nav>
+          <ul>
+            <li><a href="#evenements">Événements</a></li>
+            <li><a href="#merch">Merch</a></li>
+            <li><a href="#biographie">Biographie</a></li>
+            <li><a href="#discographie">Discographie</a></li>
+          </ul>
+        </nav>
+      </footer>
+    </main>
+    <script src="https://w.soundcloud.com/player/api.js"></script>
+    <script>
+      const soundcloudPlayer = document.querySelector("#soundcloud-player");
+      const soundcloudPlaylist =
+        "https://soundcloud.com/qotsa/sets/like-clockwork-2";
+      let widget;
+      let widgetReady = false;
+      let selectedTrackIndex;
+
+      function playSelectedTrack() {
+        if (widgetReady && selectedTrackIndex !== undefined) {
+          widget.skip(selectedTrackIndex);
+          widget.play();
+        }
+      }
+
+      document.querySelectorAll(".play-button").forEach((button) => {
+        button.addEventListener("click", () => {
+          selectedTrackIndex = Number(button.dataset.trackIndex);
+          soundcloudPlayer.hidden = false;
+          if (!widget) {
+            soundcloudPlayer.src = `https://w.soundcloud.com/player/?url=${encodeURIComponent(soundcloudPlaylist)}&auto_play=false&show_artwork=false&visual=false`;
+            widget = SC.Widget(soundcloudPlayer);
+            widget.bind(SC.Widget.Events.READY, () => {
+              widgetReady = true;
+              playSelectedTrack();
+            });
+            return;
+          }
+
+          playSelectedTrack();
+        });
+      });
+    </script>
+  </body>
+</html>
