@@ -29,14 +29,14 @@ nav a {
   text-decoration: none;
   text-transform: uppercase;
 }
- nav a::after {
-  content: '';
+nav a::after {
+  content: "";
   display: block;
   background: black;
   height: 2px;
   width: 0;
   transition: width 0.3s;
- }
+}
 nav a:hover::after {
   width: 100%;
 }
