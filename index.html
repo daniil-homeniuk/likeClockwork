@@ -4,90 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>...Like Clockwork</title>
+    <link rel="stylesheet" href="./styles.css" />
   </head>
-
-  <style>
-    body {
-      margin: 0;
-    }
-    header,
-    footer {
-      display: flex;
-      align-items: center;
-      height: 80px;
-      background-color: lightgray;
-    }
-    header {
-      justify-content: flex-end;
-    }
-    nav {
-      margin: 0 4rem;
-    }
-    nav ul {
-      display: flex;
-      gap: 1rem;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-    nav a {
-      color: inherit;
-      text-decoration: none;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    .album {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 2rem;
-      padding: 2rem;
-    }
-    .album-cover {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-    .track-list {
-      padding: 0;
-      list-style: none;
-    }
-    .track-list li {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 0.75rem 0;
-      border-bottom: 1px solid lightgray;
-    }
-    .play-button {
-      display: grid;
-      width: 2rem;
-      height: 2rem;
-      place-items: center;
-      padding: 0;
-      border: 0;
-      background: transparent;
-      color: inherit;
-      cursor: pointer;
-    }
-    .play-button:hover {
-      opacity: 0.65;
-    }
-    .play-button svg {
-      display: block;
-    }
-    #soundcloud-player {
-      width: 100%;
-      height: 166px;
-      border: 0;
-    }
-    @media (max-width: 600px) {
-      .album {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
 
   <body>
     <main>
@@ -352,38 +270,6 @@
       </footer>
     </main>
     <script src="https://w.soundcloud.com/player/api.js"></script>
-    <script>
-      const soundcloudPlayer = document.querySelector("#soundcloud-player");
-      const soundcloudPlaylist =
-        "https://soundcloud.com/qotsa/sets/like-clockwork-2";
-      let widget;
-      let widgetReady = false;
-      let selectedTrackIndex;
-
-      function playSelectedTrack() {
-        if (widgetReady && selectedTrackIndex !== undefined) {
-          widget.skip(selectedTrackIndex);
-          widget.play();
-        }
-      }
-
-      document.querySelectorAll(".play-button").forEach((button) => {
-        button.addEventListener("click", () => {
-          selectedTrackIndex = Number(button.dataset.trackIndex);
-          soundcloudPlayer.hidden = false;
-          if (!widget) {
-            soundcloudPlayer.src = `https://w.soundcloud.com/player/?url=${encodeURIComponent(soundcloudPlaylist)}&auto_play=false&show_artwork=false&visual=false`;
-            widget = SC.Widget(soundcloudPlayer);
-            widget.bind(SC.Widget.Events.READY, () => {
-              widgetReady = true;
-              playSelectedTrack();
-            });
-            return;
-          }
-
-          playSelectedTrack();
-        });
-      });
-    </script>
+    <script src="./script.js"></script>
   </body>
 </html>
