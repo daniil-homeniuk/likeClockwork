@@ -14,18 +14,18 @@
   </head>
 
   <body>
+    <header>
+      <nav aria-label="Navigation principale">
+        <ul>
+          <li><a href="#evenements">Événements</a></li>
+          <li><a href="#merch">Merch</a></li>
+          <li><a href="#biographie">Biographie</a></li>
+          <li><a href="#discographie">Discographie</a></li>
+        </ul>
+      </nav>
+    </header>
     <main>
-      <header>
-        <nav>
-          <ul>
-            <li><a href="#evenements">Événements</a></li>
-            <li><a href="#merch">Merch</a></li>
-            <li><a href="#biographie">Biographie</a></li>
-            <li><a href="#discographie">Discographie</a></li>
-          </ul>
-        </nav>
-      </header>
-      <section class="album">
+      <section class="album" aria-labelledby="album-title">
         <div class="album-left-side">
           <img
             class="album-cover"
@@ -41,28 +41,20 @@
           </p>
         </div>
         <div class="album-right-side">
-          <h1>...Like Clockwork</h1>
-          <p>3 juin 2013</p>
+          <h1 id="album-title">...Like Clockwork</h1>
+          <p>3 juin 2013 | MATADOR RECORDS</p>
           <h2>Queens of the Stone Age</h2>
-          <ul class="track-list">
+          <ol class="track-list" role="list">
             <li>
               <span>01. Keep Your Eyes Peeled</span>
               <button
                 class="play-button"
                 type="button"
                 data-track-index="0"
+                aria-label="Écouter le titre 1 : Keep Your Eyes Peeled"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  viewBox="0 0 16 16"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M10.804 8 5 4.633v6.734zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696z"
-                  />
+                <svg class="play-icon" aria-hidden="true">
+                  <use href="./assets/icons.svg#play"></use>
                 </svg>
               </button>
             </li>
@@ -72,18 +64,10 @@
                 class="play-button"
                 type="button"
                 data-track-index="1"
+                aria-label="Écouter le titre 2 : I Sat by the Ocean"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  viewBox="0 0 16 16"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M10.804 8 5 4.633v6.734zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696z"
-                  />
+                <svg class="play-icon" aria-hidden="true">
+                  <use href="./assets/icons.svg#play"></use>
                 </svg>
               </button>
             </li>
@@ -93,18 +77,10 @@
                 class="play-button"
                 type="button"
                 data-track-index="2"
+                aria-label="Écouter le titre 3 : The Vampyre of Time and Memory"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  viewBox="0 0 16 16"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M10.804 8 5 4.633v6.734zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696z"
-                  />
+                <svg class="play-icon" aria-hidden="true">
+                  <use href="./assets/icons.svg#play"></use>
                 </svg>
               </button>
             </li>
@@ -114,18 +90,10 @@
                 class="play-button"
                 type="button"
                 data-track-index="3"
+                aria-label="Écouter le titre 4 : If I Had a Tail"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  viewBox="0 0 16 16"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M10.804 8 5 4.633v6.734zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696z"
-                  />
+                <svg class="play-icon" aria-hidden="true">
+                  <use href="./assets/icons.svg#play"></use>
                 </svg>
               </button>
             </li>
@@ -135,18 +103,10 @@
                 class="play-button"
                 type="button"
                 data-track-index="4"
+                aria-label="Écouter le titre 5 : My God Is the Sun"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  viewBox="0 0 16 16"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M10.804 8 5 4.633v6.734zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696z"
-                  />
+                <svg class="play-icon" aria-hidden="true">
+                  <use href="./assets/icons.svg#play"></use>
                 </svg>
               </button>
             </li>
@@ -156,18 +116,10 @@
                 class="play-button"
                 type="button"
                 data-track-index="5"
+                aria-label="Écouter le titre 6 : Kalopsia"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  viewBox="0 0 16 16"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M10.804 8 5 4.633v6.734zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696z"
-                  />
+                <svg class="play-icon" aria-hidden="true">
+                  <use href="./assets/icons.svg#play"></use>
                 </svg>
               </button>
             </li>
@@ -177,18 +129,10 @@
                 class="play-button"
                 type="button"
                 data-track-index="6"
+                aria-label="Écouter le titre 7 : Fairweather Friends"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  viewBox="0 0 16 16"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M10.804 8 5 4.633v6.734zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696z"
-                  />
+                <svg class="play-icon" aria-hidden="true">
+                  <use href="./assets/icons.svg#play"></use>
                 </svg>
               </button>
             </li>
@@ -198,18 +142,10 @@
                 class="play-button"
                 type="button"
                 data-track-index="7"
+                aria-label="Écouter le titre 8 : Smooth Sailing"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  viewBox="0 0 16 16"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M10.804 8 5 4.633v6.734zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696z"
-                  />
+                <svg class="play-icon" aria-hidden="true">
+                  <use href="./assets/icons.svg#play"></use>
                 </svg>
               </button>
             </li>
@@ -219,18 +155,10 @@
                 class="play-button"
                 type="button"
                 data-track-index="8"
+                aria-label="Écouter le titre 9 : I Appear Missing"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  viewBox="0 0 16 16"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M10.804 8 5 4.633v6.734zm.792-.696a.802.8 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696z"
-                  />
+                <svg class="play-icon" aria-hidden="true">
+                  <use href="./assets/icons.svg#play"></use>
                 </svg>
               </button>
             </li>
@@ -240,22 +168,14 @@
                 class="play-button"
                 type="button"
                 data-track-index="9"
+                aria-label="Écouter le titre 10 : ...Like Clockwork"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  viewBox="0 0 16 16"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M10.804 8 5 4.633v6.734zm.792-.696a.802.8 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696z"
-                  />
+                <svg class="play-icon" aria-hidden="true">
+                  <use href="./assets/icons.svg#play"></use>
                 </svg>
               </button>
             </li>
-          </ul>
+          </ol>
           <iframe
             id="soundcloud-player"
             title="Lecteur SoundCloud"
@@ -263,17 +183,17 @@
           ></iframe>
         </div>
       </section>
-      <footer>
-        <nav>
-          <ul>
-            <li><a href="#evenements">Événements</a></li>
-            <li><a href="#merch">Merch</a></li>
-            <li><a href="#biographie">Biographie</a></li>
-            <li><a href="#discographie">Discographie</a></li>
-          </ul>
-        </nav>
-      </footer>
     </main>
+    <footer>
+      <nav aria-label="Navigation de pied de page">
+        <ul>
+          <li><a href="#evenements">Événements</a></li>
+          <li><a href="#merch">Merch</a></li>
+          <li><a href="#biographie">Biographie</a></li>
+          <li><a href="#discographie">Discographie</a></li>
+        </ul>
+      </nav>
+    </footer>
     <script src="https://w.soundcloud.com/player/api.js"></script>
     <script src="./script.js"></script>
   </body>

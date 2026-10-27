@@ -6,6 +6,20 @@ let widget;
 let widgetReady = false;
 let selectedTrackIndex = 0;
 
+const playButtons = document.querySelectorAll(".play-button");
+
+function setActiveTrack(trackIndex) {
+  playButtons.forEach((button) => {
+    const isActive = Number(button.dataset.trackIndex) === trackIndex;
+    button.closest("li").classList.toggle("is-active", isActive);
+    if (isActive) {
+      button.setAttribute("aria-current", "true");
+    } else {
+      button.removeAttribute("aria-current");
+    }
+  });
+}
+
 function playSelectedTrack() {
   widget.skip(selectedTrackIndex);
   widget.play();
@@ -22,6 +36,7 @@ function initPlayer() {
 
 function selectTrack(trackIndex) {
   selectedTrackIndex = trackIndex;
+  setActiveTrack(trackIndex);
 
   if (!widget) {
     initPlayer();
@@ -33,7 +48,7 @@ function selectTrack(trackIndex) {
   }
 }
 
-document.querySelectorAll(".play-button").forEach((button) => {
+playButtons.forEach((button) => {
   button.addEventListener("click", () => {
     selectTrack(Number(button.dataset.trackIndex));
   });

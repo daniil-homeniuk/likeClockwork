@@ -9,7 +9,11 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   margin: 0;
+  background: #cc222b;
   font-family: "Oswald", sans-serif;
   font-weight: 400;
   letter-spacing: 0.02em;
@@ -17,8 +21,8 @@ body {
 }
 
 main {
-  min-height: 100vh;
   display: flex;
+  flex: 1;
   flex-direction: column;
   background: url("./assets/background.png") center / cover no-repeat;
 }
@@ -27,9 +31,11 @@ main {
 header,
 footer {
   display: flex;
+  flex: 0 0 auto;
   align-items: center;
   min-height: 80px;
   padding: 1rem 3rem;
+  background: #cc222b;
 }
 
 header {
@@ -71,6 +77,20 @@ nav a::after {
 
 nav a:hover::after {
   width: 100%;
+}
+
+nav a:focus-visible::after {
+  width: 100%;
+}
+
+nav a:focus-visible,
+.play-button:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 3px;
+}
+
+.play-button:focus-visible {
+  outline-offset: -2px;
 }
 
 .album {
@@ -126,6 +146,15 @@ nav a:hover::after {
   border-bottom: 1px solid lightgray;
 }
 
+.track-list li.is-active {
+  border-bottom-color: white;
+}
+
+.track-list li.is-active span {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
 .play-button {
   display: grid;
   width: 2rem;
@@ -137,16 +166,20 @@ nav a:hover::after {
   color: inherit;
   cursor: pointer;
   transform: scale(1.1);
+  transform-origin: right center;
   transition: transform 0.3s;
 }
 
 .play-button:hover {
   opacity: 0.65;
-  transform: scale(2);
+  transform: scale(1.4);
 }
 
 .play-button svg {
   display: block;
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
 }
 
 #soundcloud-player {
