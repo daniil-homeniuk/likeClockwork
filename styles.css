@@ -1,3 +1,13 @@
+:root {
+  --max-width: 1400px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: "Oswald", sans-serif;
@@ -5,32 +15,51 @@ body {
   letter-spacing: 0.02em;
   color: white;
 }
+
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: url("./assets/background.png") center / cover no-repeat;
+}
+
+/* TODO: try to liquid glass */
 header,
 footer {
   display: flex;
   align-items: center;
-  height: 80px;
-  background-color: lightgray;
-  background: #f30342;
+  min-height: 80px;
+  padding: 1rem 3rem;
 }
+
 header {
   justify-content: flex-end;
 }
+
 nav {
-  margin: 0 4rem;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
 }
+
 nav ul {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   margin: 0;
   padding: 0;
   list-style: none;
 }
+
+header nav ul {
+  justify-content: flex-end;
+}
+
 nav a {
   color: inherit;
   text-decoration: none;
   text-transform: uppercase;
 }
+
 nav a::after {
   content: "";
   display: block;
@@ -39,30 +68,55 @@ nav a::after {
   width: 0;
   transition: width 0.3s;
 }
+
 nav a:hover::after {
   width: 100%;
 }
-section {
-  background: url("./assets/background.png") center / cover no-repeat;
-}
+
 .album {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2rem;
-  padding: 2rem;
+  flex: 1;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-content: center;
+  align-items: start;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  gap: 4rem;
 }
+
 .album-cover {
   display: block;
   width: 100%;
-  height: auto;
 }
+
+.album-left-side p {
+  line-height: 1.5;
+}
+
 .album-right-side {
   text-transform: uppercase;
 }
+
+.album-right-side h1 {
+  margin: 0;
+}
+
+.album-right-side p {
+  margin: 0.75rem 0 1.5rem 0;
+}
+
+.album-right-side h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
 .track-list {
+  margin: 0;
   padding: 0;
   list-style: none;
 }
+
 .track-list li {
   display: flex;
   align-items: center;
@@ -71,6 +125,7 @@ section {
   padding: 0.75rem 0;
   border-bottom: 1px solid lightgray;
 }
+
 .play-button {
   display: grid;
   width: 2rem;
@@ -84,20 +139,40 @@ section {
   transform: scale(1.1);
   transition: transform 0.3s;
 }
+
 .play-button:hover {
   opacity: 0.65;
   transform: scale(2);
 }
+
 .play-button svg {
   display: block;
 }
+
 #soundcloud-player {
   width: 100%;
   height: 166px;
   border: 0;
 }
-@media (max-width: 600px) {
+
+@media (max-width: 900px) {
   .album {
     grid-template-columns: 1fr;
+    align-content: start;
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+
+  section p,
+  h1,
+  h2,
+  li {
+    text-align: center;
+  }
+  header,
+  footer ul {
+    justify-content: center;
+    padding: 0;
+    margin: auto;
   }
 }
