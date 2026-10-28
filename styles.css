@@ -188,12 +188,53 @@ nav a:focus-visible,
   border: 0;
 }
 
+
+.discography {
+  display: grid;
+  flex: 1;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  align-content: center;
+  align-items: start;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  gap: 4rem;
+}
+
+.album-cover img{
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s;
+  transform-origin: center center;
+}
+.album-cover img:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s;
+}
+
+.album-cover h3 {
+  margin: 0.5rem 0 0.25rem 0;
+  font-size: 1.25rem;
+}
+
 @media (max-width: 900px) {
   .album {
     grid-template-columns: 1fr;
     align-content: start;
     gap: 2rem;
     padding: 2rem 0;
+  }
+
+  .discography {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+
+  .discography h3 {
+    text-align: center;
   }
 
   section p,
